@@ -51,6 +51,7 @@ export default function Hero({ onExploreClick, onOpenVipModal }) {
           ))}
         </div>
       </div>
+
       <div className="hero-overlay"></div>
 
       {/* Hero Content */}

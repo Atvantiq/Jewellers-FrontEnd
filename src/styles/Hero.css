@@ -41,7 +41,7 @@
   background-position: center;
   opacity: 0;
   transition: opacity 2s ease-in-out;
-  filter: brightness(0.45) contrast(1.05) saturate(0.95);
+  filter: brightness(0.68) contrast(1.02) saturate(0.98);
 }
 
 .hero-main-pane .hero-pane-slide {
@@ -87,8 +87,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(7, 8, 10, 0.4) 0%, rgba(7, 8, 10, 0.7) 65%, #07080a 100%);
+  background: linear-gradient(180deg, rgba(7, 8, 10, 0.18) 0%, rgba(7, 8, 10, 0.35) 45%, rgba(7, 8, 10, 0.65) 80%, #07080a 100%);
   z-index: 2;
+  pointer-events: none;
 }
 
 .hero-container-content {
@@ -108,14 +109,17 @@
   align-items: center;
   gap: 8px;
   border: 1px solid rgba(212, 175, 55, 0.3);
-  background: rgba(212, 175, 55, 0.05);
+  background: rgba(7, 8, 10, 0.5); /* Glassmorphic darker background for text clarity */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   padding: 6px 16px;
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #f3e5ab; /* Always champagne gold */
   border-radius: 100px;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 }
 
 .hero-title {
@@ -125,17 +129,17 @@
   font-weight: 700;
   letter-spacing: -0.5px;
   color: #f5f6f8; /* Always diamond white */
-  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.7), 0 2px 4px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.95), 0 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 .hero-subtitle {
   font-size: 1.05rem;
   max-width: 750px;
-  color: #a0a5b0; /* Always silver mist */
+  color: #e2e4e9; /* Slightly brighter for premium clarity against video */
   margin-bottom: 40px;
   line-height: 1.7;
   font-weight: 300;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.95), 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .hero-ctas {
@@ -152,7 +156,9 @@
   font-size: 0.95rem;
   color: #d4af37 !important;
   border: 1px solid #d4af37 !important;
-  background: transparent !important;
+  background: rgba(7, 8, 10, 0.45) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 .hero-btn-book:hover {
   background: rgba(212, 175, 55, 0.1) !important;
@@ -191,11 +197,13 @@
   margin: 0 0 3px 0;
   color: #f5f6f8;
   letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
 }
 .highlight-text p {
   font-size: 0.78rem;
-  color: #a0a5b0;
+  color: #d1d5db; /* Brighter for contrast */
   margin: 0;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
 }
 
 /* Responsive adjustments */

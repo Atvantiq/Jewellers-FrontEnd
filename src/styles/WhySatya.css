@@ -2,6 +2,10 @@
 .why-head { text-align: center; max-width: 620px; margin: 0 auto 75px; }
 .why-head h2 { font-size: 2.6rem; letter-spacing: -0.5px; }
 .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+.why-grid > div {
+  display: flex;
+  flex-direction: column;
+}
 .why-card { 
   position: relative;
   text-align: center; 
@@ -9,6 +13,10 @@
   border-radius: 0px; 
   overflow: hidden;
   transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
 }
 .why-card:hover {
   transform: translateY(-8px);
