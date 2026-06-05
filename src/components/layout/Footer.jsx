@@ -39,8 +39,8 @@ export default function Footer({ onNavigate, onOpenVipModal }) {
           {/* Brand Info */}
           <div className="footer-col brand-col">
             <Link to="/" className="footer-logo-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-              {SITE.logo ? (
-                <img src={SITE.logo} alt={SITE.brand} className="footer-logo-img" />
+              {SITE.logoFooter ? (
+                <img src={SITE.logoFooter} alt={SITE.brand} className="footer-logo-img" />
               ) : (
                 <>
                   <span className="logo-satya text-gold-gradient">SATYA</span>

@@ -2,9 +2,8 @@
 // Change the WhatsApp number / phone here and it updates across the whole site.
 export const SITE = {
   brand: 'Satya Jewellers',
-  // CLIENT LOGO SLOT: drop a logo file in /public and set this to e.g. '/logo.svg'.
-  // While null, the styled text logo is shown. No other change needed.
-  logo: null,
+  logoHeader: '/images/customer/logo_header.jpeg',
+  logoFooter: '/images/customer/logo_footer.jpeg',
   url: 'https://satyajewellers.com', // production domain (used for canonical, OG, sitemap)
   whatsappNumber: '919816005000', // digits only, country code first (no +)
   phone: '+91 98160 05000',
