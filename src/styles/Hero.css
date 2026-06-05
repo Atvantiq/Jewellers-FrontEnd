@@ -87,7 +87,7 @@
   position: absolute;
   inset: 0;
   background: 
-    radial-gradient(circle at center, rgba(7, 8, 10, 0.24) 0%, rgba(7, 8, 10, 0.52) 100%), /* Slightly increased vignette for minor darkness and better contrast */
+    radial-gradient(circle at center, rgba(7, 8, 10, 0.32) 0%, rgba(7, 8, 10, 0.58) 100%), /* Increased vignette for darkness and contrast */
     linear-gradient(180deg, rgba(var(--bg-primary-rgb), 0.4) 0%, rgba(var(--bg-primary-rgb), 0) 20%, rgba(var(--bg-primary-rgb), 0) 80%, var(--bg-primary) 100%);
   z-index: 2;
   pointer-events: none;
