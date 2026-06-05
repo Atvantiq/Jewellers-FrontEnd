@@ -1,54 +1,58 @@
-import { useState, useEffect } from 'react';
 import { ShieldCheck, Award, Sparkles, MapPin } from 'lucide-react';
 import '../../styles/Hero.css';
 
-const MAIN_SLIDES = [
-  '/images/bridal_gold_jewelry.png',
-  '/images/bridal_diamond_jewelry.png'
+const ROW1_ITEMS = [
+  { src: '/images/bridal_gold_jewelry.png', ratio: '4/3' },
+  { src: '/images/himachali_bride_gen_1.png', ratio: '1/1' },
+  { src: '/images/lookbook_shot_1.png', ratio: '1/1' },
+  { src: '/images/himachali_bride_gen_2.png', ratio: '4/3' },
+  { src: '/images/himachali_bride_gen_4.png', ratio: '1/1' },
+  { src: '/images/himachali_bride_gen_5.png', ratio: '4/3' },
+  { src: '/images/lookbook_shot_4.png', ratio: '3/2' }
 ];
 
-const ACCENT_SLIDES = [
-  '/images/traditional_himachali_chandrahaar.png',
-  '/images/gold_bangle_luxury.png',
-  '/images/diamond_solitaire_ring.png'
+const ROW2_ITEMS = [
+  { src: '/images/bridal_diamond_jewelry.png', ratio: '1/1' },
+  { src: '/images/himachali_bride_gen_3.png', ratio: '1/1' },
+  { src: '/images/lookbook_shot_2.png', ratio: '4/3' },
+  { src: '/images/himachali_bride_gen_6.png', ratio: '1/1' },
+  { src: '/images/about_heritage_story.png', ratio: '4/3' },
+  { src: '/images/himachali_bride_gen_7.png', ratio: '4/3' }
 ];
+
+function CollageItem({ item }) {
+  return (
+    <div
+      className="collage-item image-item"
+      style={{
+        aspectRatio: item.ratio,
+        backgroundImage: `url('${item.src}')`
+      }}
+    />
+  );
+}
 
 export default function Hero({ onExploreClick, onOpenVipModal }) {
-  const [activeMain, setActiveMain] = useState(0);
-  const [activeAccent, setActiveAccent] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveMain((prev) => (prev + 1) % MAIN_SLIDES.length);
-      setActiveAccent((prev) => (prev + 1) % ACCENT_SLIDES.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <section className="hero-section">
-      {/* Cinematic Dual-Pane Collage Slideshow */}
-      <div className="hero-slideshow-container">
-        {/* Left/Main Pane: Bride Portraits */}
-        <div className="hero-main-pane">
-          {MAIN_SLIDES.map((slide, idx) => (
-            <div
-              key={slide}
-              className={`hero-pane-slide ${idx === activeMain ? 'active' : ''}`}
-              style={{ backgroundImage: `url('${slide}')` }}
-            />
-          ))}
+      {/* Cinematic Horizontal Scrolling Collage */}
+      <div className="hero-collage-container">
+        {/* Row 1 (scrolls left) */}
+        <div className="collage-row row-1">
+          <div className="collage-track scroll-left">
+            {ROW1_ITEMS.concat(ROW1_ITEMS).map((item, idx) => (
+              <CollageItem key={`r1-${idx}`} item={item} />
+            ))}
+          </div>
         </div>
 
-        {/* Right/Accent Pane: Detail Close-ups */}
-        <div className="hero-accent-pane">
-          {ACCENT_SLIDES.map((slide, idx) => (
-            <div
-              key={slide}
-              className={`hero-pane-slide ${idx === activeAccent ? 'active' : ''}`}
-              style={{ backgroundImage: `url('${slide}')` }}
-            />
-          ))}
+        {/* Row 2 (scrolls right) */}
+        <div className="collage-row row-2">
+          <div className="collage-track scroll-right">
+            {ROW2_ITEMS.concat(ROW2_ITEMS).map((item, idx) => (
+              <CollageItem key={`r2-${idx}`} item={item} />
+            ))}
+          </div>
         </div>
       </div>
 

@@ -17,7 +17,7 @@
   overflow: hidden;
   border: 1px solid var(--border-color);
   transition: var(--transition-smooth);
-  height: 480px;
+  aspect-ratio: 1 / 1;
 }
 .sbc-card:hover {
   border-color: var(--border-hover);
@@ -25,7 +25,7 @@
 }
 .sbc-img {
   position: absolute; inset: 0;
-  background-size: cover; background-position: center;
+  background-size: cover; background-position: left top;
   transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .sbc-card:hover .sbc-img { transform: scale(1.08); }
@@ -64,6 +64,5 @@
 
 @media (max-width: 900px) {
   .sbc-grid { grid-template-columns: 1fr; gap: 18px; }
-  .sbc-card { height: 360px; }
   .sbc-wrapper { padding: 70px 0; }
 }
