@@ -2,7 +2,7 @@
 // Change the WhatsApp number / phone here and it updates across the whole site.
 export const SITE = {
   brand: 'Satya Jewellers',
-  logoHeader: '/images/customer/logo_header.png',
+  logoHeader: '/images/customer/logo_footer.png',
   logoFooter: '/images/customer/logo_footer.png',
   url: 'https://satyajewellers.com', // production domain (used for canonical, OG, sitemap)
   whatsappNumber: '919816005000', // digits only, country code first (no +)
