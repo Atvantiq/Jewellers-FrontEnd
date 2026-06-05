@@ -87,8 +87,8 @@
   position: absolute;
   inset: 0;
   background: 
-    radial-gradient(circle at center, rgba(7, 8, 10, 0.32) 0%, rgba(7, 8, 10, 0.58) 100%), /* Increased vignette for darkness and contrast */
-    linear-gradient(180deg, rgba(var(--bg-primary-rgb), 0.4) 0%, rgba(var(--bg-primary-rgb), 0) 20%, rgba(var(--bg-primary-rgb), 0) 80%, var(--bg-primary) 100%);
+    radial-gradient(circle at center, rgba(7, 8, 10, 0.32) 0%, rgba(7, 8, 10, 0.58) 100%), /* Radial vignette to darken the collage area */
+    linear-gradient(180deg, rgba(var(--bg-primary-rgb), 0.35) 0%, rgba(var(--bg-primary-rgb), 0) 15%, rgba(var(--bg-primary-rgb), 0) 92%, var(--bg-primary) 100%); /* Short bottom fade to seamlessly blend at the very edge */
   z-index: 2;
   pointer-events: none;
 }
@@ -135,13 +135,13 @@
 }
 
 .hero-subtitle {
-  font-size: 1.05rem;
+  font-size: 1.08rem; /* Slightly larger for presence */
   max-width: 750px;
-  color: #e2e4e9; /* Slightly brighter for premium clarity against video */
+  color: #ffffff; /* Pure white for maximum contrast */
   margin-bottom: 40px;
   line-height: 1.7;
-  font-weight: 300;
-  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.95), 0 1px 3px rgba(0, 0, 0, 0.8);
+  font-weight: 500; /* Thicker font weight for high legibility */
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95), 0 1px 4px rgba(0, 0, 0, 0.85); /* Strong drop shadows */
 }
 
 .hero-ctas {
