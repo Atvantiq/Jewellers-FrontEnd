@@ -7,87 +7,88 @@
   justify-content: center;
   padding: 100px 0 80px 0;
   overflow: hidden;
-  background-color: #07080a;
+  background-color: var(--bg-primary);
 }
 
-.hero-slideshow-container {
-  position: absolute; inset: 0;
+.hero-collage-container {
+  position: absolute;
+  inset: 0;
   z-index: 1;
   overflow: hidden;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px; /* Tight, premium gap between rows */
+  padding: 0; /* Remove vertical padding to let rows fill all the way to edges */
+  opacity: 0.95; /* High overall collage container opacity for maximum visibility */
+  filter: brightness(1.05) contrast(1.02) saturate(1.05); /* Boost vibrancy and brightness of bride portraits */
+  background-color: var(--bg-primary);
+}
+
+.collage-row {
+  flex: 1; /* Divide container height equally so rows stretch to fill the screen */
+  min-height: 280px;
   width: 100%;
-  height: 100%;
-}
-
-.hero-main-pane {
-  position: relative;
-  width: 65%;
-  height: 100%;
   overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
-.hero-accent-pane {
-  position: relative;
-  width: 35%;
+.collage-track {
+  display: flex;
+  gap: 16px; /* Consistent gap size */
   height: 100%;
-  overflow: hidden;
-  border-left: 1px solid rgba(212, 175, 55, 0.15);
+  width: max-content;
+  will-change: transform;
 }
 
-.hero-pane-slide {
-  position: absolute;
-  inset: 0;
+.collage-row.row-1 .collage-track {
+  animation: scrollTrackLeft 50s linear infinite;
+}
+
+.collage-row.row-2 .collage-track {
+  animation: scrollTrackRight 65s linear infinite;
+}
+
+.collage-item {
+  height: 100%;
+  width: auto;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  background-color: var(--bg-tertiary);
+  transition: transform 0.4s ease;
+}
+
+.collage-item:hover {
+  transform: scale(1.03);
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+.collage-item.image-item {
   background-size: cover;
   background-position: center;
-  opacity: 0;
-  transition: opacity 2s ease-in-out;
-  filter: brightness(0.68) contrast(1.02) saturate(0.98);
+  opacity: 0.94; /* Highly visible Pahari brides background at near full opacity */
 }
 
-.hero-main-pane .hero-pane-slide {
-  transform: scale(1.02);
+@keyframes scrollTrackLeft {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
 }
 
-.hero-main-pane .hero-pane-slide.active {
-  opacity: 1;
-  animation: kenBurnsMain 14s infinite alternate ease-in-out;
-}
-
-.hero-accent-pane .hero-pane-slide {
-  transform: scale(1.05);
-}
-
-.hero-accent-pane .hero-pane-slide.active {
-  opacity: 1;
-  animation: kenBurnsAccent 14s infinite alternate ease-in-out;
-}
-
-@keyframes kenBurnsMain {
-  0% { transform: scale(1.02) translate(0, 0); }
-  100% { transform: scale(1.12) translate(-0.5%, 0.5%); }
-}
-
-@keyframes kenBurnsAccent {
-  0% { transform: scale(1.05) translate(0, 0); }
-  100% { transform: scale(1.15) translate(0.5%, -0.5%); }
-}
-
-@media (max-width: 768px) {
-  .hero-main-pane {
-    width: 100%;
-  }
-  .hero-accent-pane {
-    display: none;
-  }
+@keyframes scrollTrackRight {
+  0% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
 }
 
 .hero-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(7, 8, 10, 0.18) 0%, rgba(7, 8, 10, 0.35) 45%, rgba(7, 8, 10, 0.65) 80%, #07080a 100%);
+  inset: 0;
+  background: 
+    radial-gradient(circle at center, rgba(7, 8, 10, 0.18) 0%, rgba(7, 8, 10, 0.45) 100%), /* Much softer center vignette to keep bride images bright */
+    linear-gradient(180deg, rgba(var(--bg-primary-rgb), 0.4) 0%, rgba(var(--bg-primary-rgb), 0) 20%, rgba(var(--bg-primary-rgb), 0) 80%, var(--bg-primary) 100%);
   z-index: 2;
   pointer-events: none;
 }
