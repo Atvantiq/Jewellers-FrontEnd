@@ -8,7 +8,7 @@ const timelineData = [
     title: 'The Foundation on The Mall',
     icon: <Calendar className="timeline-icon" size={20} />,
     subtitle: 'Oldest Showroom in Shimla',
-    image: '/images/about_heritage_story.png',
+    image: '/images/traditional_himachali_jhumka_earrings.png',
     desc: 'Shri Shelender Verma and Smt. Rajni Verma open a small silver jewellery business at Shop No. 62, Satya Complex, on the prestigious Mall Road in Shimla — built on fair weight and the trust of local families.',
     quote: 'Trust was our only capital, and customer satisfaction was our only metric.',
     author: 'Smt. Rajni & Shri Shelender Verma, Founders'
