@@ -5,7 +5,9 @@ import '../../styles/Hero.css';
 const HERO_SLIDES = [
   '/images/hero_jewelry_banner.png',
   '/images/hero_slide_2.png',
-  '/images/hero_slide_3.png'
+  '/images/hero_slide_3.png',
+  '/images/bridal_gold_jewelry.png',
+  '/images/bridal_diamond_jewelry.png'
 ];
 
 export default function Hero({ onExploreClick, onOpenVipModal }) {
