@@ -2,6 +2,7 @@
   padding: 100px 0;
   background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
   border-bottom: 1px solid var(--border-color);
+  position: relative;
 }
 
 .timeline-header {
@@ -9,7 +10,7 @@
   margin-bottom: 60px;
 }
 .timeline-header h2 {
-  font-size: 2.3rem;
+  font-size: 2.4rem;
   margin-bottom: 15px;
 }
 .timeline-intro {
@@ -20,14 +21,17 @@
   line-height: 1.6;
 }
 
-/* Stepper navigation */
+/* Stepper navigation - Floating borderless design */
 .timeline-stepper {
   display: flex;
   justify-content: space-between;
-  padding: 25px 40px;
-  margin-bottom: 45px;
+  padding: 10px 40px;
+  margin-bottom: 55px;
   position: relative;
-  border-radius: 2px;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .step-node-wrapper {
@@ -41,78 +45,101 @@
   flex: 0;
 }
 
+/* Floating gold connector track */
 .step-connector {
   position: absolute;
-  left: 30px;
+  left: 27px; /* Center of a 54px node */
   right: 0;
-  height: 1px;
+  height: 2px;
   background: var(--border-color);
   z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
   transition: var(--transition-smooth);
 }
 .step-node-wrapper:last-child .step-connector {
   display: none;
 }
 .step-node-wrapper.completed .step-connector {
-  background: var(--gold-dark);
+  background: linear-gradient(90deg, var(--gold-light) 0%, var(--gold-primary) 100%);
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+}
+.step-node-wrapper.active .step-connector {
+  background: var(--gold-primary);
 }
 
+/* Concentric Gold Rings */
 .step-node {
-  width: 60px;
-  height: 60px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2;
   transition: var(--transition-smooth);
-  box-shadow: var(--shadow-premium);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: relative;
 }
 .step-node-wrapper:hover .step-node {
-  border-color: var(--border-hover);
+  border-color: var(--gold-light);
+  box-shadow: 0 0 12px var(--gold-glow);
+  transform: scale(1.08);
 }
 .step-node-wrapper.active .step-node {
   border-color: var(--gold-primary);
-  background: rgba(212, 175, 55, 0.1);
-  box-shadow: var(--shadow-gold);
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 50%, var(--gold-dark) 100%);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.45);
+  transform: scale(1.12);
 }
 .step-node-wrapper.completed .step-node {
-  border-color: var(--gold-dark);
+  border-color: var(--gold-primary);
+  background: var(--bg-primary);
+  box-shadow: 0 0 10px var(--gold-glow);
 }
 
 .step-year {
   font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.85rem;
+  font-weight: 500;
+  font-size: 0.82rem;
   color: var(--text-secondary);
+  transition: var(--transition-fast);
   letter-spacing: 0.5px;
 }
 .step-node-wrapper.active .step-year {
+  color: #ffffff;
+  font-weight: 600;
+}
+.step-node-wrapper.completed .step-year {
   color: var(--gold-primary);
+  font-weight: 600;
 }
 
-/* Detail Card */
+/* Detail Card - Split Screen Editorial formatting */
 .timeline-card-viewport {
   min-height: 380px;
 }
 
 .timeline-detail-card {
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
+  grid-template-columns: 1fr 1.25fr;
   overflow: hidden;
-  border-radius: 2px;
-  min-height: 380px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-premium);
+  background-color: var(--card-bg);
 }
 
 .timeline-detail-image-box {
   position: relative;
-  background-color: #030405;
+  background-color: #0c0a08;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-right: 1px solid var(--border-color);
 }
 
 .timeline-card-bg-img {
@@ -122,89 +149,135 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.2) contrast(1.1);
+  filter: brightness(0.7) contrast(1.08) saturate(0.95);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
+.timeline-detail-card:hover .timeline-card-bg-img {
+  transform: scale(1.04);
+}
+
+/* Vignette overlay to keep focus on center watermark */
 .timeline-card-image-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, var(--bg-secondary) 95%);
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 35%, rgba(12, 10, 8, 0.5) 100%);
+  z-index: 1;
 }
 
 .timeline-year-giga {
   position: relative;
   z-index: 2;
   font-family: var(--font-heading);
-  font-size: 7.5rem;
+  font-size: 8rem;
   font-weight: 700;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(212, 175, 55, 0.28);
+  -webkit-text-stroke: 1.5px rgba(212, 175, 55, 0.35);
   letter-spacing: 2px;
   pointer-events: none;
   transition: transform 0.1s ease-out;
+  filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.4));
 }
 body.light-theme .timeline-year-giga {
-  -webkit-text-stroke: 1px rgba(184, 144, 32, 0.35);
+  -webkit-text-stroke: 1.5px rgba(184, 144, 32, 0.45);
 }
 
 .timeline-detail-info {
-  padding: 45px;
+  padding: 50px 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: var(--bg-secondary);
+  background-color: var(--card-bg);
+  position: relative;
+}
+/* Vertical luxury accent strip */
+.timeline-detail-info::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 15%;
+  bottom: 15%;
+  width: 3px;
+  background: linear-gradient(180deg, var(--gold-light), var(--gold-primary), var(--gold-dark));
 }
 
 .timeline-badge-row {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 .timeline-icon {
   color: var(--gold-primary);
 }
 .timeline-sub {
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   color: var(--gold-primary);
   font-weight: 600;
 }
 
 .timeline-detail-info h3 {
-  font-size: 1.7rem;
-  font-weight: 700;
-  margin-bottom: 18px;
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  color: var(--text-primary);
 }
 .timeline-desc {
   font-size: 0.92rem;
   color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 25px;
+  line-height: 1.65;
+  margin: 0 0 25px 0;
 }
 
+/* Editorial quote formatting using Pinyon Script font */
 .timeline-blockquote {
-  border-left: 2px solid var(--gold-primary);
-  padding-left: 15px;
-  font-style: italic;
-  color: var(--text-primary);
-  font-size: 0.88rem;
+  border-left: none;
+  padding-left: 0;
+  margin-top: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
-.timeline-blockquote p {
+.timeline-quote-text {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 2.3rem;
+  line-height: 1.1;
+  color: var(--gold-primary);
   margin: 0;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(212, 175, 55, 0.03);
+}
+body.light-theme .timeline-quote-text {
+  color: var(--gold-dark);
+}
+.timeline-quote-author {
+  font-size: 0.68rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 500;
 }
 
 @media (max-width: 900px) {
+  .timeline-section-wrapper {
+    padding: 70px 0;
+  }
   .timeline-stepper {
-    padding: 20px;
+    padding: 10px 0;
     overflow-x: auto;
-    gap: 15px;
+    gap: 18px;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 35px;
   }
   .step-connector {
     display: none;
+  }
+  .step-node-wrapper {
+    flex: 0 0 auto;
   }
   .step-node {
     width: 50px;
@@ -213,14 +286,31 @@ body.light-theme .timeline-year-giga {
   .timeline-detail-card {
     grid-template-columns: 1fr;
   }
+  .timeline-detail-image-box {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    height: 240px;
+  }
   .timeline-card-image-overlay {
-    background: linear-gradient(180deg, transparent, var(--bg-secondary) 95%);
+    background: linear-gradient(180deg, transparent 40%, rgba(12, 10, 8, 0.65) 100%);
   }
   .timeline-year-giga {
-    font-size: 4rem;
-    padding: 40px 0;
+    font-size: 5rem;
   }
   .timeline-detail-info {
-    padding: 30px;
+    padding: 35px 25px;
+  }
+  /* Horizontal accent strip for mobile layout stacking */
+  .timeline-detail-info::before {
+    left: 15%;
+    right: 15%;
+    top: 0;
+    bottom: auto;
+    width: auto;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold-light), var(--gold-primary), var(--gold-dark));
+  }
+  .timeline-quote-text {
+    font-size: 1.95rem;
   }
 }

@@ -8,32 +8,40 @@ const timelineData = [
     title: 'The Foundation on The Mall',
     icon: <Calendar className="timeline-icon" size={20} />,
     subtitle: 'Oldest Showroom in Shimla',
+    image: '/images/about_heritage_story.png',
     desc: 'Shri Shelender Verma and Smt. Rajni Verma open a small silver jewellery business at Shop No. 62, Satya Complex, on the prestigious Mall Road in Shimla — built on fair weight and the trust of local families.',
-    quote: '"Trust was our only capital, and customer satisfaction was our only metric."'
+    quote: 'Trust was our only capital, and customer satisfaction was our only metric.',
+    author: 'Smt. Rajni & Shri Shelender Verma, Founders'
   },
   {
     year: '1990s',
     title: 'Beyond Silver — Into Gold & Diamonds',
     icon: <Gem className="timeline-icon" size={20} />,
     subtitle: 'A Complete Jewellery Showroom',
+    image: '/images/bridal_gold_jewelry.png',
     desc: 'Responding to a growing family of loyal customers, we expand from silver into hallmarked gold and fine certified diamonds — becoming a complete jewellery destination for every occasion in Shimla.',
-    quote: '"We grew alongside our customers, one celebration at a time."'
+    quote: 'We grew alongside our customers, one celebration at a time.',
+    author: 'Verma Family'
   },
   {
     year: '2001',
     title: 'The Next Generation Joins',
     icon: <Award className="timeline-icon" size={20} />,
     subtitle: 'Modern Expertise, Same Values',
+    image: '/images/diamond_solitaire_ring.png',
     desc: 'Mr. Sachin Verma joins the family business after professional training in gemology, diamond grading and import–export — bringing scientific precision and a wider world of designs to the mountains.',
-    quote: '"Global standards, without ever losing our local relationships."'
+    quote: 'Global standards, without ever losing our local relationships.',
+    author: 'Sachin Verma'
   },
   {
     year: 'Today',
     title: 'Serving Generations of Trust',
     icon: <Sparkles className="timeline-icon" size={20} />,
     subtitle: 'Heritage Meets Today',
+    image: '/images/traditional_himachali_chandrahaar.png',
     desc: 'We proudly serve third-generation families for their wedding and festive jewellery — from traditional Himachali Chandrahaars to contemporary certified diamonds — all backed by 100% Karatmeter-verified purity.',
-    quote: '"Crafting trust for over four decades, one ornament at a time."'
+    quote: 'Crafting trust for over four decades, one ornament at a time.',
+    author: 'Verma Family'
   }
 ];
 
@@ -75,7 +83,7 @@ export default function HeritageTimeline() {
         </div>
 
         {/* Timeline Stepper Navigation */}
-        <div className="timeline-stepper glass-panel">
+        <div className="timeline-stepper">
           {timelineData.map((item, idx) => (
             <div 
               key={item.year}
@@ -98,7 +106,11 @@ export default function HeritageTimeline() {
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
             >
-              <img src="/images/hero_jewelry_banner.png" alt="Heritage store in Shimla" className="timeline-card-bg-img" />
+              <img 
+                src={timelineData[activeIndex].image} 
+                alt={timelineData[activeIndex].title} 
+                className="timeline-card-bg-img" 
+              />
               <div className="timeline-card-image-overlay"></div>
               
               <div 
@@ -119,7 +131,8 @@ export default function HeritageTimeline() {
               <p className="timeline-desc">{timelineData[activeIndex].desc}</p>
               
               <div className="timeline-blockquote">
-                <p>{timelineData[activeIndex].quote}</p>
+                <p className="timeline-quote-text">"{timelineData[activeIndex].quote}"</p>
+                <span className="timeline-quote-author">— {timelineData[activeIndex].author}</span>
               </div>
             </div>
           </div>
