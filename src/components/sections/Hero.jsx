@@ -3,7 +3,7 @@ import { ShieldCheck, Award, Sparkles, MapPin } from 'lucide-react';
 import '../../styles/Hero.css';
 
 const HERO_SLIDES = [
-  '/images/hero_jewelry_banner.png',
+  '/images/himachali_bride_gen_1.png',
   '/images/hero_slide_2.png',
   '/images/hero_slide_3.png',
   '/images/bridal_gold_jewelry.png',
