@@ -24,7 +24,7 @@
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transition: opacity 1.5s ease-in-out;
+  transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
   transform: scale(1);
   pointer-events: none;
 }
