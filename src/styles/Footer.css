@@ -149,6 +149,14 @@
   display: flex;
   flex-direction: column;
 }
+.contact-link {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+.contact-link:hover {
+  color: var(--gold-primary);
+}
 
 /* Footer Bottom */
 .footer-bottom {

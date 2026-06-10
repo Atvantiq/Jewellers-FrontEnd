@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { X, Calendar, User, Phone, MessageSquare, Sparkles, Shield, Clock } from 'lucide-react';
-import { whatsappLink } from '../../config/site';
+import { whatsappLink, SITE } from '../../config/site';
 import '../../styles/VipConsultationModal.css';
 
 export default function VipConsultationModal({ isOpen, onClose }) {
@@ -118,8 +118,9 @@ export default function VipConsultationModal({ isOpen, onClose }) {
               </div>
             </div>
             
-            <div className="perks-footer-note">
-              Shop No. 62, Satya Complex, The Mall Shimla
+            <div className="perks-footer-note" style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+              <span>Shop No. 62, Satya Complex, The Mall Shimla</span>
+              <span>Call: <a href={`tel:${SITE.phone.replace(/\s+/g, '')}`} style={{ color: '#f3e5ab', textDecoration: 'none', fontWeight: '500' }}>{SITE.phone}</a> / <a href={`tel:${SITE.phone2.replace(/\s+/g, '')}`} style={{ color: '#f3e5ab', textDecoration: 'none', fontWeight: '500' }}>{SITE.phone2}</a></span>
             </div>
           </div>
         </div>
@@ -237,6 +238,10 @@ export default function VipConsultationModal({ isOpen, onClose }) {
               <button type="submit" className="button-premium form-submit-btn">
                 Confirm & Book on WhatsApp
               </button>
+
+              <div className="form-direct-call">
+                Or call showroom directly: <a href={`tel:${SITE.phone.replace(/\s+/g, '')}`}>{SITE.phone}</a> / <a href={`tel:${SITE.phone2.replace(/\s+/g, '')}`}>{SITE.phone2}</a>
+              </div>
             </form>
           ) : (
             <div className="form-success-state">

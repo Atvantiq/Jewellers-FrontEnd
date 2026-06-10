@@ -90,8 +90,9 @@ export default function Footer({ onNavigate, onOpenVipModal, theme }) {
               <li>
                 <Phone size={18} className="contact-icon" />
                 <div className="phone-lines">
-                  <span>+91 98160 05000</span>
-                  <span>0177-2805808</span>
+                  <a href={`tel:${SITE.phone.replace(/\s+/g, '')}`} className="contact-link">{SITE.phone}</a>
+                  <a href={`tel:${SITE.phone2.replace(/\s+/g, '')}`} className="contact-link">{SITE.phone2}</a>
+                  <a href={`tel:${SITE.phoneAlt.replace(/\s+/g, '')}`} className="contact-link">{SITE.phoneAlt} (Landline)</a>
                 </div>
               </li>
               <li>

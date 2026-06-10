@@ -45,7 +45,9 @@ export default function Header({ wishlistCount, onOpenWishlist, onOpenVipModal, 
             </span>
             <span className="banner-item">
               <Phone size={13} className="text-gold" />
-              +91 98160 05000
+              <a href={`tel:${SITE.phone.replace(/\s+/g, '')}`} className="banner-link">{SITE.phone}</a>
+              <span className="banner-sep">/</span>
+              <a href={`tel:${SITE.phone2.replace(/\s+/g, '')}`} className="banner-link">{SITE.phone2}</a>
             </span>
           </div>
           <div className="banner-right">

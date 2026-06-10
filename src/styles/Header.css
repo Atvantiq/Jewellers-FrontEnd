@@ -7,6 +7,18 @@
   color: var(--text-secondary);
   letter-spacing: 1px;
 }
+.banner-link {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+.banner-link:hover {
+  color: var(--gold-primary);
+}
+.banner-sep {
+  opacity: 0.4;
+  margin: 0 4px;
+}
 .banner-content {
   display: flex;
   justify-content: space-between;

@@ -362,3 +362,20 @@ body.light-theme .modal-close-btn:hover {
     padding: 30px 20px;
   }
 }
+
+.form-direct-call {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+}
+.form-direct-call a {
+  color: var(--gold-primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition-fast);
+}
+.form-direct-call a:hover {
+  color: var(--gold-light);
+}
