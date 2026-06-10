@@ -36,7 +36,14 @@
   --glass-card: rgba(17, 19, 23, 0.75);
   
   /* Typography */
-  --font-heading: 'Playfair Display', Georgia, serif;
+  /* Brand/heading font — Baskerville Old Face per client spec (SJ Font.docx).
+     "Baskerville Old Face" is a proprietary Windows/Office font, so the stack
+     falls back to the closest free web fonts (loaded from Google Fonts in index.html). */
+  --font-heading: 'Baskerville Old Face', 'Baskervville', 'Libre Baskerville', Georgia, serif;
+  /* --- PREVIOUS heading font (kept for easy revert) ---
+     To restore the old look, comment the --font-heading line above and
+     uncomment the line below:
+     --font-heading: 'Playfair Display', Georgia, serif; */
   --font-body: 'Outfit', sans-serif;
   
   /* Transitions */
