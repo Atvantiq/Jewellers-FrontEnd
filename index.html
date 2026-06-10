@@ -59,7 +59,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Pinyon+Script&family=Baskervville:ital@0;1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
     <style>
       /* First-paint preloader (shows before React mounts) */
@@ -70,7 +70,9 @@
         transition: opacity 0.6s ease, visibility 0.6s ease;
       }
       #preloader .pl-mark {
-        font-family: 'Playfair Display', Georgia, serif;
+        /* Brand font — Baskerville Old Face per client spec (SJ Font.docx).
+           To revert, restore: 'Playfair Display', Georgia, serif; */
+        font-family: 'Baskerville Old Face', 'Baskervville', 'Libre Baskerville', Georgia, serif;
         font-size: 2rem; font-weight: 700; letter-spacing: 8px;
         background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa771c 100%);
         -webkit-background-clip: text; background-clip: text;
