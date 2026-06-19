@@ -91,7 +91,6 @@ export default function Footer({ onNavigate, onOpenVipModal, theme }) {
                 <Phone size={18} className="contact-icon" />
                 <div className="phone-lines">
                   <a href={`tel:${SITE.phone.replace(/\s+/g, '')}`} className="contact-link">{SITE.phone}</a>
-                  <a href={`tel:${SITE.phone2.replace(/\s+/g, '')}`} className="contact-link">{SITE.phone2}</a>
                   <a href={`tel:${SITE.phoneAlt.replace(/\s+/g, '')}`} className="contact-link">{SITE.phoneAlt} (Landline)</a>
                 </div>
               </li>
@@ -101,7 +100,7 @@ export default function Footer({ onNavigate, onOpenVipModal, theme }) {
               </li>
               <li>
                 <Clock size={18} className="contact-icon" />
-                <span>10:00 AM – 7:00 PM IST<br />(Monday – Saturday)</span>
+                <span>11:00 AM – 8:00 PM IST<br />(Monday – Saturday)</span>
               </li>
             </ul>
           </div>

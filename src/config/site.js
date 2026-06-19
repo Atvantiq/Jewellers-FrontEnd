@@ -7,10 +7,9 @@ export const SITE = {
   logoFooterDark: '/images/customer/logo_footer.png',
   logoFooterLight: '/images/customer/logo_footer_light.png',
   url: 'https://satyajewellers.com', // production domain (used for canonical, OG, sitemap)
-  whatsappNumber: '919816005000', // digits only, country code first (no +)
-  phone: '+91 98160 05000',
-  phone2: '+91 74240 05000',
-  phoneAlt: '0177-2805808',
+  whatsappNumber: '917424005000', // digits only, country code first (no +)
+  phone: '+91 74240 05000',
+  phoneAlt: '0177-2805000',
   email: 'satyajewellers@gmail.com',
   address: 'Shop No. 62, Satya Complex, The Mall, Shimla, HP 171001',
   instagram: 'https://instagram.com/'

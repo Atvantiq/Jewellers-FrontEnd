@@ -42,6 +42,6 @@ Ideal product shots: square (1:1), centred piece, soft shadow, dark or white sea
 with a **real photo of the Satya Jewellers showroom** when you have one.
 
 ## Also worth updating (text, not images)
-- **Phone number** — the site uses `+91 98160 05000`; your About page listed `+91 7424005000`. Confirm the correct one.
+- **Phone number** — the site uses `+91 74240 05000` (mobile) and `0177-2805000` (landline).
 - **Testimonials** — `src/components/Testimonials.jsx` has placeholder reviews; swap in real Google reviews.
 - **Instagram link** — Lookbook points to a generic `instagram.com/`; set your real handle.

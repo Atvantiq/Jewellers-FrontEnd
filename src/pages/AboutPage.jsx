@@ -358,11 +358,10 @@ export default function AboutPage() {
                     <Phone size={18} className="text-gold" />
                     <span style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                       <a href={`tel:${SITE.phone.replace(/\s+/g, '')}`} className="contact-link">{SITE.phone}</a>
-                      <a href={`tel:${SITE.phone2.replace(/\s+/g, '')}`} className="contact-link">{SITE.phone2}</a>
                       <a href={`tel:${SITE.phoneAlt.replace(/\s+/g, '')}`} className="contact-link">{SITE.phoneAlt} (Landline)</a>
                     </span>
                   </li>
-                  <li><Clock size={18} className="text-gold" /><span>10:00 AM – 7:00 PM IST<br />Monday – Saturday</span></li>
+                  <li><Clock size={18} className="text-gold" /><span>11:00 AM – 8:00 PM IST<br />Monday – Saturday</span></li>
                 </ul>
                 <div className="about-visit-cta">
                   <a href={WA} target="_blank" rel="noopener noreferrer" className="button-premium">

@@ -204,16 +204,19 @@ export default function Hero({ onExploreClick, onOpenVipModal }) {
           </span>
         </div>
 
-        <h1 className="hero-title animate-fade-in" style={{ animationDelay: '0.2s' }}>
-          The Pinnacle of <span className="italic-title-gold">Purity</span>,<br />
-          The Legacy of <span className="italic-title">Trust</span>
+        <h1 className="hero-brand-title animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          Satya Jewellers
         </h1>
 
-        <p className="hero-subtitle animate-fade-in" style={{ animationDelay: '0.3s' }}>
+        <p className="hero-title animate-fade-in" style={{ animationDelay: '0.3s' }}>
+          The Pinnacle of <span className="italic-title-gold">Purity</span>, The Legacy of <span className="italic-title">Trust</span>
+        </p>
+
+        <p className="hero-subtitle animate-fade-in" style={{ animationDelay: '0.4s' }}>
           Serving exquisite designs, BIS 916 Government hallmarked gold, and premium certified diamonds since 1980. Explore our famous Himachali traditional heritage collections and experience on-the-spot Karatmeter testing.
         </p>
 
-        <div className="hero-ctas animate-fade-in" style={{ animationDelay: '0.4s' }}>
+        <div className="hero-ctas animate-fade-in" style={{ animationDelay: '0.5s' }}>
           <button className="button-premium hero-btn-explore" onClick={onExploreClick}>
             Explore Collections
           </button>
@@ -223,7 +226,7 @@ export default function Hero({ onExploreClick, onOpenVipModal }) {
         </div>
 
         {/* Highlight Badges */}
-        <div className="hero-highlights animate-fade-in" style={{ animationDelay: '0.5s' }}>
+        <div className="hero-highlights animate-fade-in" style={{ animationDelay: '0.6s' }}>
           <div className="highlight-item">
             <ShieldCheck size={20} className="highlight-icon" />
             <div className="highlight-text">
